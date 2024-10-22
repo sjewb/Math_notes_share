@@ -1,0 +1,46 @@
+\ifx\allfiles\undefined
+\documentclass[12pt, a4paper, oneside, UTF8]{ctexbook}
+\def\configPath{../config}
+\input{\configPath/config}
+\begin{document}
+\else
+\fi
+
+\chapter{泛函分析}
+\section*{第一小部分：一元实变量函数的Lebesgue积分}
+\section*{集合、映射与关系的预备知识}
+
+\section{实数集：集合、序列与函数}
+
+\section{Lebesgue测度}
+
+
+\section{Lebesgue可测函数}
+\begin{proposition}
+	令函数$f$具有可测定义域$E$,则下面叙述等价
+	\begin{change}
+		\item $\forall c \in R,\{x\in E| f(x)>c\} \in \mathscr{U}$ ,$\mathscr{U}$为可测集族  
+		\item $\forall c \in R,\{x\in E| f(x)\geqslant c\} \in \mathscr{U}$
+		\item $\forall c \in R,\{x\in E| f(x)<c\} \in \mathscr{U}$
+		\item $\forall c \in R,\{x\in E| f(x)\leqslant  c\} \in \mathscr{U}$
+	\end{change}
+\end{proposition}
+
+\begin{defn}
+	定义在$E$上的扩张的实值函数$f$称为是Lebesgue可测的，若它的定义域$E$是可测的且满足\cref{proposhifenxi1}的四个命题之一的。
+\end{defn}
+\section{Lebesgue积分}
+
+
+
+\section{微分与积分}
+
+\section{$L^P$空间：完备性与逼近}
+
+
+
+\section{$L^P$空间：对偶与弱收敛}
+
+\ifx\allfiles\undefined
+\end{document}
+\fi

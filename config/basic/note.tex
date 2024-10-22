@@ -1,0 +1,70 @@
+% 自定义彩色圆圈数字命令
+\newcommand{\circled}[1]{\textcolor{blue}{\textcircled{\textcolor{black}{\small #1}}}}
+%\newcommand{\circled}[1]{\textcircled{\small #1}}
+
+% 重新定义 notes 环境
+\newenvironment{notes}{
+	\par\noindent\makebox[0pt][r]{%
+		\scriptsize\color{red!90}\textdbend\quad}% 图标
+	\textbf{\color{red!90}Note:} \normalfont % 红色提示标题，正体字体
+}{\par}
+
+% 定义 change 环境，使用圆圈数字标注每一个变化项
+%\newenvironment{change}{
+%	\begin{enumerate}[label=\small\protect\circled{\arabic*}]}{
+%\end{enumerate}}
+
+\newenvironment{change}{
+	\begin{enumerate}[label=\hfill\circled{\arabic*}, itemsep=1em]
+	}{
+	\end{enumerate}
+}
+% 定义 change2 环境
+\newenvironment{change2}{
+	\begin{tcolorbox}[colback=white, colframe=gray, boxrule=0.5mm, sharp corners=south]
+		\begin{enumerate}[label=\centering\circled{\arabic*}]
+		}{
+		\end{enumerate}
+	\end{tcolorbox}
+}
+% 定义 tip 环境，用于显示提示信息
+\newenvironment{tip}{
+	\par\noindent\makebox[-3pt][r]{%
+		\scriptsize\color{green!90}\ding{43}\quad}% 绿色图标
+	\textbf{\color{green!90}Tip:} \itshape % 绿色的提示标题
+}{\par}
+
+% 定义 warning 环境，用于显示警告信息
+\newenvironment{warning}{
+	\par\noindent\makebox[-3pt][r]{%
+		\scriptsize\color{orange!90}\ding{70}\quad}% 橙色图标
+	\textbf{\color{orange!90}Warning:} \itshape % 橙色的警告标题
+}{\par}
+
+% 定义 important 环境，用于显示重要信息
+\newenvironment{important}{
+	\par\noindent\makebox[-3pt][r]{%
+		\scriptsize\color{red!90}\ding{72}\quad}% 红色图标
+	\textbf{\color{red!90}Important:} \itshape % 红色的重点标题
+}{\par}
+
+% 定义 examplezero 环境，并提供自动编号
+\newcounter{examplezero}[section]
+\renewcommand{\theexamplezero}{\thesection.\arabic{examplezero}}
+
+\newenvironment{examplezero}[1][]{
+	\refstepcounter{examplezero} % 增加 examplezero 计数器
+	\par\noindent\textbf{\color{purple!90}Example \theexamplezero:} \itshape #1 \rmfamily}{\par}
+	
+% 定义introduction环境
+\newenvironment{introduction}[1][Introduction]{
+	\begin{tcolorbox}[title={#1}]
+		\begin{multicols}{2}
+			\begin{itemize}[label=\textcolor{structurecolor}{\upshape\scriptsize$\bullet$}]  % 使用$\bullet$
+			}{
+			\end{itemize}
+		\end{multicols}
+	\end{tcolorbox}
+}
+
+

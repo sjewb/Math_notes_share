@@ -1,0 +1,206 @@
+\ifx\allfiles\undefined
+\documentclass[12pt, a4paper, oneside, UTF8]{ctexbook}
+\def\configPath{../config}
+\input{\configPath/config}
+\begin{document}
+	\else
+	\fi
+	\chapter{例子}
+	
+	\section{举例说明}
+	
+	% 定义
+	\begin{defn}
+		设 $X$ 是一个集合，$d: X \times X \to \mathbb{R}$ 是一个满足以下条件的函数：
+		\begin{enumerate}
+			\item 对任意 $x, y \in X$，有 $d(x, y) \geq 0$，且 $d(x, y) = 0$ 当且仅当 $x = y$。
+			\item 对任意 $x, y \in X$，有 $d(x, y) = d(y, x)$。
+			\item 对任意 $x, y, z \in X$，有 $d(x, z) \leq d(x, y) + d(y, z)$。
+		\end{enumerate}
+		则称 $d$ 为 $X$ 上的一个\textbf{度量}，$X$ 称为一个\textbf{度量空间}。
+	\end{defn}
+	
+	% 定理
+	\begin{thm}
+		在度量空间 $(X, d)$ 中，任意闭球都是完备的，当且仅当 $X$ 本身是完备的\cite{choy20194ds}。
+	\end{thm}
+	
+	% 引理
+	\begin{lemma}
+		如果一个序列在度量空间中是柯西序列，则该序列在该空间中有极限。
+	\end{lemma}
+	
+	% 推论
+	\begin{corollary}
+		每个完备的度量空间都是巴拿赫空间。
+	\end{corollary}
+	
+	% 标准
+	\begin{criterion}
+		一个度量空间是完备的，当且仅当每个柯西序列在该空间中收敛。
+	\end{criterion}
+	
+	% 备注
+	\begin{rmk}
+		注意，完备性是度量空间中一个非常重要的性质，它在分析中起着关键作用。例如，实数集 $\mathbb{R}$ 是完备的，而有理数集 $\mathbb{Q}$ 则不是。
+	\end{rmk}
+	
+	% 命题
+	\begin{proposition}
+		在任何度量空间中，有限维子空间都是完备的。
+	\end{proposition}
+	
+	% 示例
+	\begin{example}
+		考虑实数集 $\mathbb{R}$ 上的标准度量 $d(x, y) = |x - y|$。这是一个完备的度量空间，因为每个柯西序列在 $\mathbb{R}$ 中都有极限。
+	\end{example}
+	
+	% 问题与解答
+	\begin{problem}
+		证明在 $\mathbb{R}^n$ 中，任何两个不同的点之间的距离都是正的。
+	\end{problem}
+	
+	\begin{answer}
+		设 $x = (x_1, x_2, \ldots, x_n)$ 和 $y = (y_1, y_2, \ldots, y_n)$ 是 $\mathbb{R}^n$ 中的两个不同点。则至少存在一个索引 $i$，使得 $x_i \neq y_i$。根据欧几里得距离的定义：
+		\[
+		d(x, y) = \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + \cdots + (x_n - y_n)^2} > 0
+		\]
+		因为至少有一个 $(x_i - y_i)^2 > 0$。
+	\end{answer}
+	
+	% 解决方案示例
+	\begin{solution}
+		要证明任意两个不同点之间的距离为正，假设 $x \neq y$。这意味着存在至少一个坐标 $i$，使得 $x_i \neq y_i$。因此，
+		\[
+		(x_i - y_i)^2 > 0
+		\]
+		由于所有平方项都是非负的，且至少有一个严格正的项，因此整个距离的平方和是正的，故距离 $d(x, y) > 0$。
+	\end{solution}
+	
+	
+	\begin{examplezero}[这是一个简单的例子]
+		在这个例子中，我们展示了如何定义并使用一个名为 \texttt{examplezero} 的环境。这个环境会自动编号，并允许我们添加一些描述。
+	\end{examplezero}
+	
+	\begin{examplezero}
+		这是另一个没有标题的例子。LaTeX 可以自动为例子编号。
+	\end{examplezero}
+	
+	
+	\begin{example}
+		这是一个定理类的 \texttt{example} 环境示例，使用了 \texttt{theorem} 风格。
+	\end{example}
+
+
+	\begin{change}
+		\item 第一个变化项。
+		\item 第二个变化项。
+		\item 第三个变化项。
+	\end{change}
+	
+	
+	\begin{change2}
+		\item 第一个变化项。
+		\item 第二个变化项。
+		\item 第三个变化项。
+	\end{change2}
+	
+
+	
+	\begin{tip}
+		这是一个使用 tip 环境的示例，它带有一个绿色的图标和提示信息。
+	\end{tip}
+	
+	
+	\begin{warning}
+		这是一个使用 warning 环境的示例，它带有一个橙色的图标和警告信息。
+	\end{warning}
+
+	
+	\begin{important}
+		这是一个使用 important 环境的示例，它带有一个红色的图标和重要信息。
+	\end{important}
+	\begin{example}
+		求微分方程$y''-2y'-3y=3x+1$的一个特解.
+	\end{example}
+	\begin{solution}
+		这是二阶常系数非齐次线性微分方程，且函数$f(x)$是$e^{\lambda{x}}P_m(x)$型，其中
+		\[
+		\lambda = 0,\;P_m(x) = 3x+1
+		\]
+		与所给方程对应的齐次方程为
+		\[
+		y''-2y'-3y=0
+		\]
+		其特征方程为
+		\[
+		r^2-2r-3 = 0
+		\]
+		由于$\lambda = 0$不是特征方程的根，所以设特解
+		\[
+		y* = b_0 x + b_1
+		\]
+		带入所给方程，得
+		\[
+		-3b_0 x - 2b_0 - 3b_1 = 3x+1
+		\]
+		比较等式两端$x$同次幂的系数，易得$b_0 = -1,\;b_1 = \dfrac{1}{3}$，于是求得一个特解为
+		\[
+		y* = -x + \frac{1}{3}
+		\]
+	\end{solution}
+	\begin{introduction}
+		\item 这是第一项。
+		\item 这是第二项。
+		\item 这是第三项。
+	\end{introduction}
+	\begin{solution}
+		hxdh
+	\end{solution}
+	
+	\section{多元函数}
+	\begin{defn}
+		设二元函数$f(P) = f(x,\,y)$的定义域为$D$，点$P_0(x_0,\,y_0)$是$D$的聚点，如果存在常数$A$，对于任意给定正数$\varepsilon$，总存在正整数$\delta$，使得当点$P(x,\,y) \in D \cap \mathring{U}(P_0,\,\delta)$时，都有
+		\[
+		|f(P)-A| = |f(x,\,y) - A| < \varepsilon
+		\]
+		成立，那么就称常数$A$为函数$f(x,\,y)$当$(x,\,y) \to (x_0,\,y_0)$时的极限（二重极限），记作
+		\[
+		\lim_{(x,\,y) \to (x_0,\,y_0)}f(x,\,y) = A \quad \lor \quad \lim_{P \to P_0}f(P) = A
+		\]
+	\end{defn}
+	
+	\myspace{1}
+	
+	任意一点$P \in \R^2$与任意一个点集$E \subset \R^2$之间有以下三种关系的一种：
+	\begin{itemize}[leftmargin=45pt]
+		\item \textbf{内点}：如果存在点$P$的某个邻域$U(P)$，使得$U(P) \subset E$，那么称$P$为$E$的内点.
+		\item \textbf{外点}：如果存在点$P$的某个邻域$U(P)$，使得$U(P) \cap E = \varnothing$，那么称$P$为$E$的外点.
+		\item \textbf{边界点}：如果点$P$在任意邻域内既含有属于$E$的点，又含有不属于$E$的点，那么称$P$为$E$的边界点.
+	\end{itemize}
+	
+	\begin{problem}
+		这是一道简单的题目
+	\end{problem}
+	
+	\begin{problem}
+		这是一道简单的题目2
+	\end{problem}
+	\begin{answer}
+		这是一个解答
+	\end{answer}
+	
+	\begin{proof}
+		这是一个证明的示例。
+	\end{proof}
+	
+	\begin{solution}
+		这是解决方案的详细描述。
+	\end{solution}
+
+$\mathcal{A B C U}$ 
+
+$\mathscr{ABCdef u U}$
+	\ifx\allfiles\undefined
+\end{document}
+\fi

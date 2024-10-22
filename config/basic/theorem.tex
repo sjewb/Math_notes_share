@@ -1,0 +1,76 @@
+% 这里给出了不同环境的自用定义形式，创建了一系列自定义的定理环境，每个环境都有自己的编号方式和名称。
+\newtheorem{myDefn}{\indent Definition（定义）}[section] % 定义
+\newtheorem{myLemma}{\indent Lemma(引理)}[section] % 引理
+\newtheorem{myThm}[myLemma]{\indent Theorem（定理）} % 定理
+\newtheorem{myCorollary}[myLemma]{\indent Corollary（推论）} % 推论
+\newtheorem{myCriterion}[myLemma]{\indent Criterion（标准）} % 标准
+\newtheorem*{myRemark}{\indent Remark（备注）} % 备注
+\newtheorem{myProposition}{\indent Proposition（命题）}[section] % 命题
+
+% formal 环境用于创建带有彩色边框和背景的框架，包含两个颜色参数
+\newenvironment{formal}[2][]{%
+	\def\FrameCommand{%
+		\hspace{1pt}%
+		{\color{#1}\vrule width 2pt}%
+		{\color{#2}\vrule width 4pt}%
+		\colorbox{#2}%
+	}%
+	\MakeFramed{\advance\hsize-\width\FrameRestore}%
+	\noindent\hspace{-4.55pt}%
+	\begin{adjustwidth}{}{7pt}\vspace{2pt}\vspace{2pt}
+	}
+	{%
+		\vspace{2pt}\end{adjustwidth}\endMakeFramed%
+}
+
+% 定义不同的自定义定理环境
+\newenvironment{defn}{%
+	\begin{formal}[Green]{greenshade}\vspace{-\baselineskip / 2}\begin{myDefn}}%
+		{\end{myDefn}\end{formal}}
+
+\newenvironment{thm}{%
+	\begin{formal}[LightSkyBlue]{lightblueshade}\vspace{-\baselineskip / 2}\begin{myThm}}%
+		{\end{myThm}\end{formal}}
+
+\newenvironment{lemma}{%
+	\begin{formal}[Plum]{lilacshade}\vspace{-\baselineskip / 2}\begin{myLemma}}%
+		{\end{myLemma}\end{formal}}
+
+\newenvironment{corollary}{%
+	\begin{formal}[BurlyWood]{brownshade}\vspace{-\baselineskip / 2}\begin{myCorollary}}%
+		{\end{myCorollary}\end{formal}}
+
+\newenvironment{criterion}{%
+	\begin{formal}[DarkOrange]{orangeshade}\vspace{-\baselineskip / 2}\begin{myCriterion}}%
+		{\end{myCriterion}\end{formal}}
+
+\newenvironment{rmk}{%
+	\begin{formal}[LightCoral]{redshade}\vspace{-\baselineskip / 2}\begin{myRemark}}%
+		{\end{myRemark}\end{formal}}
+
+\newenvironment{proposition}{%
+	\begin{formal}[RoyalPurple]{purple}\vspace{-\baselineskip / 2}\begin{myProposition}}%
+		{\end{myProposition}\end{formal}}
+
+% 创建一个新计数器 problem，按章节编号
+\newcounter{problem}[chapter] 
+\newenvironment{problem}{%
+	\stepcounter{problem}% 增加problem计数器的值
+	\begin{shaded}%
+		\par\noindent\textbf{题目 \thechapter.\theproblem}%
+	}{%
+	\end{shaded}%
+	\par%
+}
+% 定义 answer 环境
+\newenvironment{answer}{\par\noindent\textbf{证明 }}{\par}
+
+% 定义 example 定理环境，不与 examplezero 冲突
+\newtheorem{example}{\indent \color{SeaGreen}{Example}}[section]
+
+% 修改 proofname 为自定义样式
+\renewcommand{\proofname}{\indent\textbf{\textcolor{TealBlue}{Proof}}}
+
+% 定义 solution 环境，作为定理环境的变种
+\newenvironment{solution}{%
+	\begin{proof}[\indent\textbf{\textcolor{TealBlue}{Solution}}]}{\end{proof}}

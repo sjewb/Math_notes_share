@@ -1,0 +1,101 @@
+\ifx\allfiles\undefined
+\documentclass[12pt, a4paper, oneside, UTF8]{ctexbook}
+\def\configPath{../config}
+\input{\configPath/config}
+\begin{document}
+	\else
+	\fi
+	\part{数学分析}
+	\chapter{六大定理的相互证明}
+	\section{六大定理}
+	
+	\label{thm:fubi2}
+	\label{pro:max3}
+	\label{property:cauchy3}
+	\label{tabe222}
+	\label{pro:js5}
+	
+	\begin{introduction}
+		\item 确界定理（实数系连续性定理）~\ref{def:int1}
+		\item 单调有界定理~\ref{thm:fubi2}
+		\item Cauchy定理~\ref{pro:max3}
+		\item 区间套定理~\ref{property:cauchy3}
+		\item 聚点定理 ~\ref{tabe222}
+		\item 有限覆盖定理（Heine-Borel定理）~\ref{pro:js5}
+	\end{introduction}
+		
+\begin{change}
+	\item 确界定理（实数系连续性定理\label{def:int1}）：非空有上界的实数集必有上确界，非空有下界的实数集必有下确界。
+	\item 单调有界定理：在实数系中，单调且有界的数列必定收敛。
+	\item Cauchy定理：数列 \(\{x_n\}\) 收敛的充要条件是 \(\{x_n\}\) 是基本（柯西）数列。
+	\item 区间套定理：若 \(\{[a_n, b_n]\}\) 形成一个闭区间套，则存在唯一的实数 \(\xi\) 属于所有的闭区间 \([a_n, b_n]\)，\(n = 1, 2, 3, \cdots\)，且 \( \xi \) 属于所有这些闭区间，并且有 \( \lim_{n \to \infty} b_n \) = \( \lim_{n \to \infty} a_n  \) =\( \xi \) 
+	\item 聚点定理、魏尔斯特拉斯定理、致密性定理、Bolzano-Weierstrass定理：
+	\begin{itemize}
+		\item 聚点定理：在一个有界序列中，至少存在一个聚点。
+		\item 魏尔斯特拉斯定理：每个有界数列都有至少一个聚点。
+		\item 致密性定理：一个集合是致密的当且仅当它的每一个开覆盖都有有限子覆盖。
+		\item Bolzano-Weierstrass定理：任何有界数列必有一个收敛的子序列。
+	\end{itemize}
+	\begin{enumerate}
+		\item \textbf{聚点定理}：
+		\begin{itemize}
+			\item \textbf{定义}：在一个有界序列中，至少存在一个聚点。
+			\item \textbf{说明}：聚点是指序列中某一子序列的极限。如果一个序列是有界的，那么它至少有一个聚点。
+			\item \textbf{应用}：该定理说明了有界序列在某种意义上不会“散开”，一定存在某些点是序列的极限点。
+		\end{itemize}
+		
+		\item \textbf{魏尔斯特拉斯定理}（也称为\textbf{有界性原理}）：
+		\begin{itemize}
+			\item \textbf{定义}：每个有界数列都有至少一个聚点。
+			\item \textbf{说明}：这个定理与聚点定理基本一致，它强调了有界数列一定存在至少一个聚点。
+			\item \textbf{应用}：该定理是序列收敛性分析中的基础，特别是对于有界数列的性质研究。
+		\end{itemize}
+		
+		\item \textbf{致密性定理}：
+		\begin{itemize}
+			\item \textbf{定义}：一个集合是致密的当且仅当它的每一个开覆盖都有有限子覆盖。
+			\item \textbf{说明}：这个定理描述了致密集（通常称为紧致集或紧集）的特性。一个集合如果每一个开覆盖（即用开集覆盖整个集合）都可以找到一个有限的子覆盖，那么这个集合是致密的。
+			\item \textbf{应用}：致密性定理在拓扑学中非常重要，用于研究集合的极限性质和连续函数的性质。
+		\end{itemize}
+		
+		\item \textbf{Bolzano-Weierstrass定理}：
+		\begin{itemize}
+			\item \textbf{定义}：任何有界数列必有一个收敛的子序列。
+			\item \textbf{说明}：这个定理指出，有界数列总是可以找到一个收敛的子序列。这意味着有界数列在某种程度上总是可以提取出一个收敛的部分。
+			\item \textbf{应用}：Bolzano-Weierstrass定理在分析学中广泛应用，特别是在证明各种关于收敛性的命题时。
+		\end{itemize}
+	\end{enumerate}
+	
+	总结：
+	\begin{itemize}
+		\item \textbf{聚点定理}和\textbf{魏尔斯特拉斯定理}主要关注有界数列的聚点存在性。
+		\item \textbf{致密性定理}关注的是集合的覆盖性质，是一个拓扑学定理。
+		\item \textbf{Bolzano-Weierstrass定理}进一步说明了有界数列不仅有聚点，而且必有一个收敛的子序列。
+	\end{itemize}
+	
+	它们各自从不同的角度描述了数列和集合的性质，在数学分析和拓扑学中都有着广泛的应用。
+	
+	\item 有限覆盖定理（Heine-Borel 定理）：
+	\begin{itemize}
+		\item \textbf{定义}：一个集合是紧的当且仅当它是闭且有界的；设 $H$ 为闭区间 $[a,b]$ 的一个（无限）开覆盖，则从 $H$ 中可选出有限个开区间来覆盖 $[a,b]$。
+		\item \textbf{说明}：如果一个开覆盖 \( S \) 覆盖了闭区间 \([a, b]\)，即 \([a, b] \subseteq \bigcup_{i \in I} U_i\)，其中 \( U_i \) 是 \( S \) 中的开区间，则存在有限个开区间 \( U_{i_1}, U_{i_2}, \ldots, U_{i_n} \) 使得 \([a, b] \subseteq \bigcup_{j=1}^n U_{i_j}\)。
+	\end{itemize}
+	
+\end{change}
+
+\begin{change2}
+	\item 第一个变化项
+	\item 第二个变化项
+	\item 第三个变化项
+\end{change2}
+
+	\subsection{确界定理}
+	
+	
+	
+\section*{确界存在定理 $\Rightarrow$ 有限覆盖定理}
+
+
+	\ifx\allfiles\undefined
+\end{document}
+\fi

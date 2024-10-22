@@ -1,0 +1,95 @@
+\ifx\allfiles\undefined
+\documentclass[12pt, a4paper, oneside, UTF8]{ctexbook}
+\def\configPath{../config}
+\input{\configPath/config}
+\begin{document}
+\else
+\fi
+
+\chapter{实分析}
+\section*{第一小部分：一元实变量函数的Lebesgue积分}
+\section*{集合、映射与关系的预备知识}
+
+\section{实数集：集合、序列与函数}
+
+\section{Lebesgue测度}
+
+
+\section{Lebesgue可测函数}
+\subsection{可测函数定义及其性质}
+\begin{proposition}\label{proposhifenxi1}
+	令函数$f$具有可测定义域$E$,则下面叙述等价
+	\begin{change}
+		\item $\forall c \in R,\{x\in E| f(x)>c\} \in \mathscr{U}$ ,$\mathscr{U}$为可测集族  
+		\item $\forall c \in R,\{x\in E| f(x)\geqslant c\} \in \mathscr{U}$
+		\item $\forall c \in R,\{x\in E| f(x)<c\} \in \mathscr{U}$
+		\item $\forall c \in R,\{x\in E| f(x)\leqslant  c\} \in \mathscr{U}$
+	\end{change}
+\end{proposition}
+
+\begin{defn}
+	定义在$E$上的扩张的实值函数$f$称为是Lebesgue可测的，若它的定义域$E$是可测的且满足\cref{proposhifenxi1}的四个命题之一的。
+\end{defn}
+
+\begin{proposition}
+	令$f$为可测集合$E$上的实值函数，则函数$f$是可测的当且仅当对每个开集 %$\mathscr{O}$，
+	$\mathcal{O}$,$\mathcal{O}$在$f$下的原象为$f^{-1}(\mathcal{O})=\{x \in E|f(x) \in \mathcal{O}\}$是可测的。
+\end{proposition}		
+
+\begin{proposition}
+	\begin{change}
+		\item 在可测集定义域上连续的实值函数是可测的。
+		\item 定义在区间上的可测函数是可测的。
+		\item 令$f$和$g$为$E$上a.e.有限的可测函数，则线性（$\alpha f + \beta g$）和（$f\cdot g$）也可测。
+		\item  可测函数的复合函数可以不是可测的。
+		\item 令$g$为$E$上的可测实值函数，而$f$为定义在整个$R$上的连续实值函数，则复合$f \circ g $是$E$上的可测函数。
+		\item 定义具有共同定义域$E$的函数的有限簇$\{ f_k\}_{k=1}^n$,定义$ \text{max}\{f_1,\cdots f_n\} $（$\forall x \in E,\text{max}\{f_1,\cdots f_n\}(x)=\text{max}\{f_1(x),\cdots f_n(x)\}$,和上确界函数一致，$\lambda (x)=\sup\limits_{n} f_n(x)$）,下确界函数同样定义，可以证明这些函数在$E$上是可测的。
+		\item 可以定义一些函数通过max函数，$|f|=\text{max}\{f(x),-f(x)\},f^+=\text{max}\{f(x),0\},f^-=\text{max}\{-f(x),0\}$,若$f$在$E$上可测，则上面的皆可测，并且$f=f^{+}-f^-,|f|=f^{+}+f^-$
+	\end{change}
+\end{proposition}
+
+	\begin{corollary}
+	若具有定义域$E$的函数$f$是可测的，则$|f|$是可测的，且事实上$\forall p >0,|f|^p$在共同定义域$E$上是可测的。
+\end{corollary}
+
+\begin{proposition}
+	\begin{enumerate}[label=\Roman*]
+		 令$f$为$	E$上扩充的实值函数。
+		\item  若$f$为可测的，而在$E$上$f=g \ a.e.$,则$g$在$E$上可测。
+		\item 对于$E$的可测子集$D$,$f$是可测的当且仅当在$D$和$E\sim D$上的限制是可测的。
+	\end{enumerate}
+\end{proposition}
+
+\subsection{序列的逐点收敛及其简单逼近}
+在数学上，存在有挺多的收敛定义，但其本质都是在某种度量（范数）下趋近于0，比如逐点收敛，均方收敛，依测度收敛（随机上有个以概率1收敛），一致收敛 $\cdots$
+
+\begin{defn}
+	对具有公共定义域$E$的函数序列$\{f_n\}$,$E$上的函数$f$,以及$A\subseteq E$
+	\begin{enumerate}[label=\Roman*]
+		\item $\forall x\in A,\lim\limits_{n \to \infty} f_n = f(x)$,称序列$\{f_n\}$在$A$上逐点收敛于$f$
+		\item 在$A$上，$\{f_n\}$a.e.逐点收敛到$f$，等价于$\{f_n\}$在$A\sim B$上逐点收敛，且$m(B)=0$
+		\item 序列$\{f_n\}$在$A$上一致收敛，等价于$\forall \epsilon >0,\exists N=N(\epsilon) \in T,\forall n\geq N,\forall x\in A,|f(x)-f_n(x)|<\epsilon$
+	\end{enumerate}
+\end{defn}
+	连续函数的逐点极限不一定连续(一致收敛才能保证)，Riemann可积函数的逐点极限不一定是Riemann可积的。
+	
+\begin{proposition}
+	令$\{f_n\}$为$E$上a.e.逐点收敛于$f$的可测函数序列，则$f$为可测函数。
+\end{proposition}
+
+
+\section{Lebesgue积分}
+
+
+
+\section{微分与积分}
+
+\section{$L^P$空间：完备性与逼近}
+
+
+
+\section{$L^P$空间：对偶与弱收敛}
+
+\ifx\allfiles\undefined
+\end{document}
+\fi

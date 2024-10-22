@@ -1,0 +1,56 @@
+\def\allfiles{}
+\documentclass[12pt, a4paper, oneside]{ctexbook}
+\def\configPath{./config}
+\input{\configPath/config}
+
+%插入图片封面
+\begin{document}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.505]{黑科技3.png}
+		%\includegraphics[scale=0.55]{黑科技00.png}
+		%\includegraphics[scale=0.65]{中科大.png}
+	\end{figure}
+\newpage
+%\tableofcontents %目录单栏展示
+% 开启双栏显示目录
+\setlength{\columnseprule}{1.04pt} % 设置两栏之间的分隔线宽度
+\begin{multicols}{2}
+	\tableofcontents
+\end{multicols}
+\include{chap0/chap0}  %对这个的一些功能使用起到作用
+
+ %第一部分：数学分析
+\include{chap1/chap} 
+  
+  %第二部分：实变函数/实分析/泛函分析
+\include{chap2/chap21}  
+\include{chap2/chap22}
+\include{chap2/chap23} 
+  %第三部分：概率论/数量统计/多元统计分析
+\include{chap3/chap31}  
+\include{chap3/chap32}
+\include{chap3/chap33}
+
+  %第四部分：代数/抽象代数
+\include{chap4/chap41}  
+\include{chap4/chap42}
+
+  %第五部分：常微分/偏微分
+\include{chap5/chap51}  
+\include{chap5/chap52}
+
+  %第六部分：随机过程/离散数学/深度学习
+\include{chap6/chap61}  
+\include{chap6/chap62}
+\include{chap6/chap63}
+
+%几何/拓扑/集合论/数值计算
+\include{chap7/chap71}
+\include{chap7/chap72}
+\include{chap7/chap73}
+\include{chap7/chap74}
+
+\bibliographystyle{plain}
+\bibliography{literature/literature}
+\end{document}
